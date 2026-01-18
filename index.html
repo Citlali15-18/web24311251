@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazbear Recruitment | Seguridad Nocturna</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        .hero h1.glitch {
+            animation: welcomeReveal 2.5s ease-out forwards, flicker 4s infinite;
+            opacity: 0;
+            filter: blur(5px);
+        }
+
+       
+        .hero-img {
+            width: 150px; 
+            margin: 20px auto;
+            display: block;
+            opacity: 0;
+            filter: grayscale(100%) contrast(150%);
+           
+            animation: 
+                imgReveal 2s ease-out 1.5s forwards, 
+                flicker 5s infinite,
+                moveSide 3s ease-in-out infinite; 
+        }
+
+        @keyframes welcomeReveal {
+            0% { opacity: 0; filter: blur(10px); transform: scale(0.9); }
+            50% { opacity: 0.5; filter: blur(5px); }
+            100% { opacity: 1; filter: blur(0); transform: scale(1); }
+        }
+
+        @keyframes imgReveal {
+            0% { opacity: 0; transform: translateY(10px) scale(0.8); }
+            100% { opacity: 0.8; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.7; }
+        }
+
+        
+        @keyframes moveSide {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-15px) rotate(-5deg); }
+            75% { transform: translateX(15px) rotate(5deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scanline"></div>
+
+    <nav class="navbar">
+        <div class="logo">FAZBEAR_ENT</div>
+        <ul>
+            <li><a href="#inicio">Protocolo</a></li>
+            <li><a href="#animatronicos">Atracciones</a></li>
+            <li><a href="#contacto">Vacantes</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-overlay">
+            <h1 class="glitch" data-text="¡BIENVENIDO A CASA!">¡BIENVENIDO A CASA!</h1>
+            
+            <img src="22.jpeg" alt="Logo Fazbear" class="hero-img">
+            
+            <p>Buscamos guardias con nervios de acero y poca apreciación por su vida.</p>
+            <a href="#contacto" class="btn-warning">ACEPTAR CONTRATO</a>
+        </div>
+    </header>
+
+    <section id="animatronicos" class="container">
+        <h2 class="title">NUESTRAS "ESTRELLAS"</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="8.jpeg" alt="Freddy" class="card-icon">
+                <h3>Freddy Fazbear</h3>
+                <p>Líder de la banda. Le encanta la música clásica y aparecer cuando se acaba la luz.</p>
+            </div>
+            <div class="card">
+                <img src="10.jpeg" alt="Bonnie" class="card-icon">
+                <h3>Bonnie</h3>
+                <p>El guitarrista más rápido de la pizzería. Aparece por la izquierda, ¡no parpadees!</p>
+            </div>
+            <div class="card">
+                <img src="15.jpeg" alt="Chica" class="card-icon">
+                <h3>Chica</h3>
+                <p>Siempre tiene hambre. Si escuchas platos en la cocina, mejor cierra la puerta.</p>
+            </div>
+        </div>
+    </section>
+
+   <section id="video-fnaf" class="container" style="text-align: center; padding: 40px 0;">
+    <h2 class="title" style="margin-bottom: 20px;">ENTRENAMIENTO PARA EMPLEADOS</h2>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 800px; margin: 0 auto; border: 4px solid #444; background: #000;">
+        <iframe 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+            src="https://www.youtube.com/embed/Cco7WorPEPg" 
+            title="FNAF Training Video" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+    <section id="contacto" class="contact-area">
+        <div class="terminal">
+            <h2>FORMULARIO DE DESCARGO DE RESPONSABILIDAD</h2>
+            <p>Completa tus datos para iniciar tu turno (12 AM - 6 AM).</p>
+            <form id="fnaf-form">
+                <input type="text" placeholder="Tu nombre (para el obituario)" required>
+                <input type="email" placeholder="Email de contacto" required>
+                <textarea placeholder="¿Alguna fobia a los peluches gigantes?"></textarea>
+                <button type="submit" class="btn-glitch">ENVIAR SOLICITUD</button>
+            </form>
+        </div>
+    </section>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
